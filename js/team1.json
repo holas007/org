@@ -1,0 +1,35 @@
+[
+  {
+    "name": "John Smith",
+    "title": "manager",
+    "via": "john@gmail.com",
+    "skills": [
+      "exchange",
+      "ad",
+      "telephony"
+    ]
+
+  },
+  {
+    "name": "Andrew Baker",
+    "title": "technician",
+    "via": "andrew@gmail.com",
+    "skills": [
+      "exchange",
+      "mobile",
+      "telephony"
+    ]
+
+  },
+  {
+    "name": "Sally Jones",
+    "title": "sales",
+    "via": "sally@gmail.com",
+    "skills": [
+      "exchange",
+      "ad",
+      "telephony"
+    ]
+
+  }
+]

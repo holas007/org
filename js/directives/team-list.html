@@ -1,0 +1,14 @@
+    <div class="teamContainer">
+    <h4>Team Title</h4>
+    <div ng-repeat="person in org.people">
+        <div class="personBox"> 
+            <a href="sip:{{person.via}}">{{person.name}}</a><br>
+            <small>{{person.title}}</small><br>
+            <span ng-bind-html="person.skills[0] | changeIcon"></span>
+            <span ng-bind-html="person.skills[1] | changeIcon"></span>
+            <span ng-bind-html="person.skills[2] | changeIcon"></span>
+            <span ng-bind-html="person.skills[3] | changeIcon"></span>
+
+        </div>
+    </div>
+    </div>

@@ -1,0 +1,10 @@
+body {
+
+}
+#legend ul,#legend li{
+list-style-type: none;
+display: inline;
+}
+.teamList ul {
+list-style-type: none;
+}
