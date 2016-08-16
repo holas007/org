@@ -1,5 +1,5 @@
 # orgchart
-Angular based serverless Dynamic org chart to hide, display, and sort information on a company's personnel.
+Angular based serverless dynamic org chart to hide, display, and sort information on a company's personnel.
 
 Example at http://orgchart.nguimond.ca
 ![alt tag](https://s3.amazonaws.com/picforlogouse/org.png)
