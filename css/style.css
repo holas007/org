@@ -1,10 +1,80 @@
 body {
-
+font-family: Calibri;
+background-image: url("http://orgchart.nickguimond.ca/cork-wallet.png");
+background-repeat: repeat;
 }
 #legend ul,#legend li{
 list-style-type: none;
 display: inline;
+    padding-right: 10px;
 }
-.teamList ul {
+h2 {
+text-align: center;
+}
+h4 {
+    margin-left: 40px;
+}
+.teamList ul,team ul li,person {
 list-style-type: none;
+}
+.team ul {
+list-style-type: none;
+}
+#legend {
+text-align: center;
+}
+.employeeId {
+    font-size: .7em;
+    color: #381e1e;
+    display: none;
+}
+.personBox:hover .employeeId {
+display: inline;
+}
+.personBox {
+    border: 1px solid lightgrey;
+    background: #ffffa5;
+    display: inline-block;
+    width: 110px;
+    margin-top: 5px;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+a {
+    text-decoration: none;
+    color: #4e4545;
+}
+.teamContainer {
+    text-align: center;
+    display: inline-block;
+    padding: 5px;
+}
+.addPersonButton {
+    text-align: center;
+}
+#teamListContainer {
+  display: flex;
+  align-items: top;
+  justify-content: center;
+}
+.addPeopleForm,.removePeopleForm {
+    position: absolute;
+    padding: 5%;
+    top: 200px;
+    background: whitesmoke;
+    right: 35%;
+    width: 20%;
+    border: 1px solid lightgrey;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+small {
+color: grey;
+}
+.formInputs {
+
+}
+.fa {
+color: grey;
 }

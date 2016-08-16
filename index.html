@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" ng-app="orgChart">
+<html lang="en">
     <head>
         <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -11,17 +11,140 @@
         <script src="js/modules/app.js"></script>
     </head>
 
-<body ng-controller="OrgController as org">
+<body ng-app="orgChart">
 
     <h2>Company Org Chart</h2>
 
     <the-legend></the-legend>
+
+<div id="teamListContainer">
+
+<div ng-controller="apiController as api" class="teamContainer">
+    <h4>Sales</h4>
+    <div ng-repeat="items in api.apis.team1" class="team">
+        <ul>
+            <li class="person">
+            <div class="personBox">
+                <span class="name"><a href="sip:{{items.via}}">{{items.name}}</a></span><br>
+                <small>{{items.title}}</small><br>
+                <span ng-bind-html="items.skills[0] | changeIcon"></span>
+                <span ng-bind-html="items.skills[1] | changeIcon"></span>
+                <span ng-bind-html="items.skills[2] | changeIcon"></span>
+                <span ng-bind-html="items.skills[3] | changeIcon"></span><br>
+                <span class="employeeId">Employee Id: {{items.Id}}</span>
+            </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div ng-controller="apiController as api" class="teamContainer">
+    <h4>Support</h4>
+    <div ng-repeat="items in api.apis.team2" class="team">
+        <ul>
+            <li class="person">
+            <div class="personBox"> 
+                <a href="sip:{{items.via}}">{{items.name}}</a><br>
+                <small>{{items.title}}</small><br>
+                <span ng-bind-html="items.skills[0] | changeIcon"></span>
+                <span ng-bind-html="items.skills[1] | changeIcon"></span>
+                <span ng-bind-html="items.skills[2] | changeIcon"></span>
+                <span ng-bind-html="items.skills[3] | changeIcon"></span><br>
+                <span class="employeeId">Employee Id: {{items.Id}}</span>
+            </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div ng-controller="apiController as api" class="teamContainer">
+    <h4>Engineering</h4>
+    <div ng-repeat="items in api.apis.team3" class="team">
+        <ul>
+            <li class="person">
+            <div class="personBox"> 
+                <a href="sip:{{items.via}}">{{items.name}}</a><br>
+                <small>{{items.title}}</small><br>
+                <span ng-bind-html="items.skills[0] | changeIcon"></span>
+                <span ng-bind-html="items.skills[1] | changeIcon"></span>
+                <span ng-bind-html="items.skills[2] | changeIcon"></span>
+                <span ng-bind-html="items.skills[3] | changeIcon"></span><br>
+                <span class="employeeId">Employee Id: {{items.Id}}</span>
+            </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div ng-controller="apiController as api" class="teamContainer">
+    <h4>Managment</h4>
+    <div ng-repeat="items in api.apis.team4" class="team">
+        <ul>
+            <li class="person">
+            <div class="personBox"> 
+                <a href="sip:{{items.via}}">{{items.name}}</a><br>
+                <small>{{items.title}}</small><br>
+                <span ng-bind-html="items.skills[0] | changeIcon"></span>
+                <span ng-bind-html="items.skills[1] | changeIcon"></span>
+                <span ng-bind-html="items.skills[2] | changeIcon"></span>
+                <span ng-bind-html="items.skills[3] | changeIcon"></span><br>
+                <span class="employeeId">Employee Id: {{items.Id}}</span>
+            </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div ng-controller="apiController as api" class="teamContainer">
+    <h4>Operations</h4>
+    <div ng-repeat="items in api.apis.team5" class="team">
+        <ul>
+            <li class="person">
+            <div class="personBox"> 
+                <a href="sip:{{items.via}}">{{items.name}}</a><br>
+                <small>{{items.title}}</small><br>
+                <span ng-bind-html="items.skills[0] | changeIcon"></span>
+                <span ng-bind-html="items.skills[1] | changeIcon"></span>
+                <span ng-bind-html="items.skills[2] | changeIcon"></span>
+                <span ng-bind-html="items.skills[3] | changeIcon"></span><br>
+                <span class="employeeId">Employee Id: {{items.Id}}</span>
+            </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+</div>
+
+<div class="addPersonButton">Add person<input type="checkbox" ng-model="addPersonForm"></div>
+<div class="addPersonButton">Remove person<input type="checkbox" ng-model="removePersonForm"></div>
+
+
+        
+		<div ng-show="addPersonForm" ng-controller="formCtrl as fc"  class="addPeopleForm">
+			<input class="formInputs" type="text" ng-model="firstname" placeholder="First Name">    <br/>
+			<input class="formInputs" type="text" ng-model="emailaddress" placeholder="Eamil Address"> <br/>
+            <input class="formInputs" type="text" ng-model="title" placeholder="Job Title"> <br/>
+            <input class="formInputs" type="text" ng-model="Id" placeholder="Employee Id"> <br/>
+            <input class="formInputs" type="text" ng-model="team" placeholder="Team"> <br/>
+            <p>Job Skills</p>
+            <table>
+			<tr><td>Active Directoy</td><td><input type="checkbox" ng-model="skill1" value="ad"/></td></tr>
+			<tr><td>Mobile Devices</td><td><input type="checkbox" ng-model="skill2" value="mobile"/></td></tr>
+            <tr><td>Telephony</td><td><input type="checkbox" ng-model="skill3" value="telephony"/></td></tr>
+            <tr><td>Exchange</td><td><input type="checkbox" ng-model="skill4" value="exchange"/></td></tr>
+            <tr><td>Extra</td><td><input type="checkbox" ng-model="skill5" value="extra"/></td></tr>
+            </table>
+			<button ng-click="fc.submit()">Submit</button>
+		</div>
     
-    <team-list></team-list>
-
- 
-
-
+		<div ng-show="removePersonForm" ng-controller="formCtrl as fc"  class="removePeopleForm">
+			<input class="formInputs" type="text" ng-model="firstname" placeholder="First Name">    <br/>
+            <input class="formInputs" type="text" ng-model="Id" placeholder="Employee Id"> <br/>
+			<button ng-click="fc.remover()">Remove Person</button>
+		</div>
 
 </body>
 </html>
