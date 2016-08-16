@@ -3,7 +3,7 @@ Angular based Dynamic org chart to hide, display, and sort information on a comp
 
 Example at http://orgchart.nguimond.ca
 ![alt tag](https://s3.amazonaws.com/picforlogouse/org.png)
-Very rough draft presently but future included features could be thus:
+**_Very rough draft_** presently but future included features could be thus:
 
 -filter and sort the users based on skills or other informtion (working example on http://samplekb.nickguimond.ca/   on the top tab you can click org chart and it will drop down)
 
